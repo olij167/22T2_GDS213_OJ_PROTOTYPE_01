@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Adult
   m_EditorClassIdentifier: 
   interestingTags:
-  - Obstacle
   - Bomb
+  - Obstacle
+  - Player
   lookSphere: 3
   lookRange: 5
-  maxAttentionSpanReset: 25
-  minAttentionSpanReset: 15
+  maxAttentionSpanReset: 20
+  minAttentionSpanReset: 10
   stoppingDistance: 2.5
   speed: 2

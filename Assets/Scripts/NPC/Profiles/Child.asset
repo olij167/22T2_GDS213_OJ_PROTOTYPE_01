@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdaeb3e43dbaa24bbbb392c8f1f7240, type: 3}
   m_Name: Child
   m_EditorClassIdentifier: 
-  interestingTags: []
-  lookSphere: 0
-  lookRange: 0
-  attentionSpanReset: 0
-  stoppingDistance: 0
+  interestingTags:
+  - Bomb
+  - Obstacle
+  - Player
+  lookSphere: 2
+  lookRange: 4
+  maxAttentionSpanReset: 15
+  minAttentionSpanReset: 5
+  stoppingDistance: 1.5
+  speed: 3

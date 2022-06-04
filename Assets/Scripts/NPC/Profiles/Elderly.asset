@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acdaeb3e43dbaa24bbbb392c8f1f7240, type: 3}
   m_Name: Elderly
   m_EditorClassIdentifier: 
-  interestingTags: []
-  lookSphere: 0
-  lookRange: 0
-  attentionSpanReset: 0
-  stoppingDistance: 0
+  interestingTags:
+  - Bomb
+  - Obstacle
+  - Player
+  lookSphere: 3
+  lookRange: 5
+  maxAttentionSpanReset: 30
+  minAttentionSpanReset: 20
+  stoppingDistance: 2.5
+  speed: 1

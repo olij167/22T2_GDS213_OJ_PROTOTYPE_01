@@ -57,6 +57,8 @@ public class NPCMovementAI : MonoBehaviour
         else
         {
             DetectInterestingObjects();
+
+            
         }
     }
 
@@ -88,6 +90,7 @@ public class NPCMovementAI : MonoBehaviour
 
     void DetectInterestingObjects()
     {
+
         RaycastHit hit;
 
         if (Physics.SphereCast(eyes.transform.position, npcProfile.lookSphere, Vector3.forward, out hit, npcProfile.lookRange))
@@ -100,6 +103,12 @@ public class NPCMovementAI : MonoBehaviour
                 stateColour = Color.red;
                 isDistracted = true;
             }
+        }
+
+        if (Vector3.Distance(transform.position, targetPos.position) <= npcProfile.stoppingDistance)
+        {
+            targetPos = walkPoints[Random.Range(0, walkPoints.Count)].transform;
+            destinationSetter.target = targetPos;
         }
 
     }

@@ -497,6 +497,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb Base
       objectReference: {fileID: 0}
+    - target: {fileID: 8386385924333651631, guid: 83812effe819c864cab579be9db74ffa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83812effe819c864cab579be9db74ffa, type: 3}
 --- !u!4 &5056234958973361672 stripped
