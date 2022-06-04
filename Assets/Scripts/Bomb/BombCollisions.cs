@@ -6,10 +6,12 @@ public class BombCollisions : MonoBehaviour
 {
     public float collisionDamage;
     public BombHealth bombHealth;
+    Detonation detonation;
 
     private void Start()
     {
         bombHealth.health = 100f;
+        detonation = GetComponent<Detonation>();
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -20,6 +22,7 @@ public class BombCollisions : MonoBehaviour
             if (bombHealth.health <= 0)
             {
                 // Explosion - Game Over
+                detonation.Detonate();
                 Debug.Log("Too many collisions! Game Over!");
             }
         }
@@ -27,6 +30,7 @@ public class BombCollisions : MonoBehaviour
         if (gameObject.CompareTag("Bomb") && collision.gameObject.CompareTag("Ground"))
         {
             // Explosion - Game Over
+            detonation.Detonate();
             Debug.Log("Bomb Dropped! Game Over!");
         }
     }

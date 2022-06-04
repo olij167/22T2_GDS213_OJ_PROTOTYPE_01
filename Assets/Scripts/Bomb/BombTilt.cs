@@ -6,12 +6,7 @@ public class BombTilt : MonoBehaviour
 {
     public float counterMovementSpeed, tiltSpeed, maxTiltSpeed;
     public float maxBombAngle, minBombAngle, leftTiltAngle, rightTiltAngle;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerMovement();

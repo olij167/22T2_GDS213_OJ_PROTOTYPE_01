@@ -85,7 +85,7 @@ public class NPCMovementAI : MonoBehaviour
             }
         }
 
-            Debug.Log("Objects Listed");
+            //Debug.Log("Objects Listed");
     }
 
     void DetectInterestingObjects()

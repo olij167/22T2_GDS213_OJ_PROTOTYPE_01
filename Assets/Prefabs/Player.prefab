@@ -113,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDamage: 15
   bombHealth: {fileID: 11400000, guid: d91eab4676a6ff74d99ad12a5ca6420c, type: 2}
+  explosion: {fileID: 0}
 --- !u!1 &5056234957492776790
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDamage: 15
   bombHealth: {fileID: 11400000, guid: d91eab4676a6ff74d99ad12a5ca6420c, type: 2}
+  explosion: {fileID: 0}
 --- !u!1 &5056234958171743230
 GameObject:
   m_ObjectHideFlags: 0
