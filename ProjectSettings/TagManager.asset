@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Bomb
   - Ground
+  - Waypoint
   layers:
   - Default
   - TransparentFX
