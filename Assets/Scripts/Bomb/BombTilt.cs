@@ -7,6 +7,13 @@ public class BombTilt : MonoBehaviour
     public float counterMovementSpeed, tiltSpeed, maxTiltSpeed;
     public float maxBombAngle, minBombAngle, leftTiltAngle, rightTiltAngle;
 
+    public UIAnimator tiltWarningAnimation;
+
+    private void Start()
+    {
+        tiltWarningAnimation.uiDisplay.enabled = false;
+
+    }
     void Update()
     {
         PlayerMovement();
@@ -15,8 +22,14 @@ public class BombTilt : MonoBehaviour
         // lean to the right momentum
         if (transform.eulerAngles.z > minBombAngle && transform.eulerAngles.z < rightTiltAngle)
         {
+            
+
             tiltSpeed = Mathf.Pow(0.5f + ((360 - transform.eulerAngles.z) / maxBombAngle), 2) * maxTiltSpeed;
             transform.Rotate(0, 0, Vector3.back.z * tiltSpeed * Time.deltaTime);
+
+            tiltWarningAnimation.uiDisplay.enabled = true;
+            tiltWarningAnimation.uiDisplay.transform.rotation = new Quaternion(0f, 0f, 0f, tiltWarningAnimation.uiDisplay.transform.rotation.w);
+            //tiltWarningAnimation.timePerFrameReset = Mathf.Lerp(0f, 0.5f, tiltSpeed);
         }
         
         // lean to the left momentum
@@ -24,12 +37,18 @@ public class BombTilt : MonoBehaviour
         {
             tiltSpeed = Mathf.Pow(0.5f + (transform.eulerAngles.z / maxBombAngle), 2) * maxTiltSpeed;
             transform.Rotate(0, 0, Vector3.forward.z * tiltSpeed * Time.deltaTime);
+
+            tiltWarningAnimation.uiDisplay.enabled = true;
+            tiltWarningAnimation.uiDisplay.transform.rotation = new Quaternion(0f, 180f, 0f, tiltWarningAnimation.uiDisplay.transform.rotation.w);
         }
+        tiltWarningAnimation.timePerFrameReset = Mathf.Lerp(0f, 0.1f, tiltSpeed);
+
 
         // balanced (no momentum)
         if (transform.eulerAngles.z < leftTiltAngle || transform.eulerAngles.z > rightTiltAngle)
         {
             tiltSpeed = 0f;
+            tiltWarningAnimation.uiDisplay.enabled = false;
         }
     }
 

@@ -19,9 +19,7 @@ public class Detonation : MonoBehaviour
 
     public bool mainCameraActive = true;
     //audio effects
-    // swap cameras - ground level shockwave & cloud formation, high angle of cloud growth
     // camera shake
-    //lose UI
 
     void Start()
     {
@@ -54,6 +52,7 @@ public class Detonation : MonoBehaviour
     {
         player.enabled = false;
         camController.enabled = false;
+        bombTilt.tiltWarningAnimation.uiDisplay.enabled = false;
         bombTilt.enabled = false;
 
         if (!explosion.gameObject.activeSelf)

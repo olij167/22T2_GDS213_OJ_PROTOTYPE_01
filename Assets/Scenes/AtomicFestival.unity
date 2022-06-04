@@ -5450,6 +5450,7 @@ GameObject:
   - component: {fileID: 391782528}
   - component: {fileID: 391782527}
   - component: {fileID: 391782531}
+  - component: {fileID: 391782532}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5532,6 +5533,7 @@ RectTransform:
   m_Children:
   - {fileID: 1977568077}
   - {fileID: 4330064508411428107}
+  - {fileID: 1806217607}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5562,6 +5564,29 @@ MonoBehaviour:
   tutorialButton: {fileID: 4330064508614862923}
   menuUI: {fileID: 4330064508411428106}
   gameSceneName: AtomicFestival
+--- !u!114 &391782532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391782526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06030d4d2e19c484f80653dd0745cd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationFrames:
+  - {fileID: 21300000, guid: c6e5962efab24244b901d6150ff70db6, type: 3}
+  - {fileID: 21300000, guid: 6cb616f3e46f20b4482f9835dc87b24a, type: 3}
+  - {fileID: 21300000, guid: cb16ba23f46b3ad42824d9c39d6f5f88, type: 3}
+  - {fileID: 21300000, guid: 3121e3c3e11ba3a43882d35dac050b36, type: 3}
+  - {fileID: 21300000, guid: ebee637db02de504f92fe8dafadf88f3, type: 3}
+  - {fileID: 21300000, guid: 2d35e4b38b398144f9b123d373ee7232, type: 3}
+  timePerFrameReset: 0
+  timePerFrame: 0
+  uiDisplay: {fileID: 1806217605}
+  count: 0
 --- !u!1 &397939441
 GameObject:
   m_ObjectHideFlags: 0
@@ -25397,7 +25422,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774858, y: 1}
+    m_SensorSize: {x: 1.7780212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -25576,7 +25601,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1246094338}
-  m_LocalRotation: {x: -0.20452611, y: 0.0000000022977622, z: -1.8520808e-10, w: 0.97886115}
+  m_LocalRotation: {x: -0.20452611, y: -0.00000003200375, z: 0.000000002579621, w: 0.97886115}
   m_LocalPosition: {x: 0.0000001903626, y: -6.356832, z: -4.7866273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -25621,7 +25646,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774858, y: 1}
+    m_SensorSize: {x: 1.7780212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -30744,7 +30769,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774858, y: 1}
+    m_SensorSize: {x: 1.7780212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -35803,6 +35828,82 @@ MonoBehaviour:
   minViewAngle: 45
   maxViewAngle: 85
   invertY: 0
+--- !u!1 &1806217604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1806217607}
+  - component: {fileID: 1806217606}
+  - component: {fileID: 1806217605}
+  m_Layer: 5
+  m_Name: Turn Warning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1806217605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806217604}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c6e5962efab24244b901d6150ff70db6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1806217606
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806217604}
+  m_CullTransparentMesh: 1
+--- !u!224 &1806217607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806217604}
+  m_LocalRotation: {x: 0, y: -0.15246832, z: 0, w: 0.98830837}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 391782530}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -17.54, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1873161753 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5056234958171743216, guid: 144634764c57136498273e19c2c6bf6f,
@@ -36085,7 +36186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008170864}
-  m_LocalRotation: {x: -0.22229722, y: 0.0000000023007594, z: -1.4338263e-10, w: 0.9749789}
+  m_LocalRotation: {x: -0.22229722, y: -0.00000003204537, z: 0.0000000019970614, w: 0.9749789}
   m_LocalPosition: {x: 0.0000001903626, y: -6.356832, z: -4.7866273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -36130,7 +36231,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774858, y: 1}
+    m_SensorSize: {x: 1.7780212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36185,7 +36286,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7774858, y: 1}
+    m_SensorSize: {x: 1.7780212, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -36201,7 +36302,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059168900}
-  m_LocalRotation: {x: -2.993868e-10, y: 0.9998438, z: -0.017675476, w: -0.000000016935328}
+  m_LocalRotation: {x: 3.0741093e-10, y: 0.9998438, z: -0.01767548, w: 0.000000017389224}
   m_LocalPosition: {x: 0, y: 10.699998, z: 51.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -37795,6 +37896,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 5056234958973361676, guid: 144634764c57136498273e19c2c6bf6f,
+        type: 3}
+      propertyPath: tiltWarningAnimation
+      value: 
+      objectReference: {fileID: 391782532}
     - target: {fileID: 5056234958973361679, guid: 144634764c57136498273e19c2c6bf6f,
         type: 3}
       propertyPath: m_Enabled
