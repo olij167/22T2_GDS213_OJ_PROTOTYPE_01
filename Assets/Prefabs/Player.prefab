@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3449183040803962728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275504629362705444}
+  m_Layer: 0
+  m_Name: CarryPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1275504629362705444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449183040803962728}
+  m_LocalRotation: {x: 0.11537064, y: -0, z: -0, w: 0.99332255}
+  m_LocalPosition: {x: 0, y: 0.12698567, z: -1.1403067}
+  m_LocalScale: {x: 1.25, y: 0.2, z: 1.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5056234958171743219}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5056234957090978334
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +65,7 @@ Transform:
   m_Children:
   - {fileID: 5056234957492776745}
   m_Father: {fileID: 5056234958171743219}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5056234957090978322
 MeshFilter:
@@ -113,7 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDamage: 15
   bombHealth: {fileID: 11400000, guid: d91eab4676a6ff74d99ad12a5ca6420c, type: 2}
-  explosion: {fileID: 0}
 --- !u!1 &5056234957492776790
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,7 +274,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5056234958171743219}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
 --- !u!33 &5056234957960430277
 MeshFilter:
@@ -324,7 +354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionDamage: 15
   bombHealth: {fileID: 11400000, guid: d91eab4676a6ff74d99ad12a5ca6420c, type: 2}
-  explosion: {fileID: 0}
 --- !u!1 &5056234958171743230
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +367,7 @@ GameObject:
   - component: {fileID: 5056234958171743217}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,10 +384,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5056234958973361672}
   - {fileID: 5056234957960430272}
   - {fileID: 5056234957090978321}
   - {fileID: 5056234958946133500}
-  - {fileID: 5056234958973361672}
+  - {fileID: 1275504629362705444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -430,7 +460,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5056234958171743219}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3623488360640321702
 PrefabInstance:
@@ -439,10 +469,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5056234958171743219}
     m_Modifications:
+    - target: {fileID: 5056234957674581483, guid: 83812effe819c864cab579be9db74ffa,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5056234958171743216}
     - target: {fileID: 8386385924333651630, guid: 83812effe819c864cab579be9db74ffa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8386385924333651630, guid: 83812effe819c864cab579be9db74ffa,
         type: 3}
@@ -498,11 +533,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bomb Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 8386385924333651631, guid: 83812effe819c864cab579be9db74ffa,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83812effe819c864cab579be9db74ffa, type: 3}

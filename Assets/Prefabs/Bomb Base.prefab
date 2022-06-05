@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 8386385923523118831}
   - component: {fileID: 8386385923523118828}
   - component: {fileID: 8386385923523118829}
-  - component: {fileID: 8386385923523118830}
-  - component: {fileID: 8386385923523118827}
   m_Layer: 0
-  m_Name: Bomb
+  m_Name: Bomb Body
   m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,34 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8386385923523118830
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386385923523118800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8386385923523118827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8386385923523118800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa199b6db093b53488f63d216beb7e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionDamage: 25
-  bombHealth: {fileID: 11400000, guid: d91eab4676a6ff74d99ad12a5ca6420c, type: 2}
 --- !u!1 &8386385924333651631
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,10 +94,11 @@ GameObject:
   - component: {fileID: 8386385924333651630}
   - component: {fileID: 8386385924333651627}
   - component: {fileID: 8386385924333651628}
-  - component: {fileID: 8386385924333651629}
+  - component: {fileID: 6163582917057715926}
   - component: {fileID: 8386385924333651625}
   - component: {fileID: 8386385924333651626}
   - component: {fileID: 8386385924333651624}
+  - component: {fileID: 5056234957674581483}
   m_Layer: 0
   m_Name: Bomb Base
   m_TagString: Bomb
@@ -142,7 +113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8386385924333651631}
-  m_LocalRotation: {x: 0.11537064, y: -0, z: -0, w: 0.99332255}
+  m_LocalRotation: {x: 0.11537064, y: 0, z: 0, w: 0.99332255}
   m_LocalPosition: {x: 0, y: 0.12698567, z: -1.1403067}
   m_LocalScale: {x: 1.25, y: 0.2, z: 1.25}
   m_ConstrainProportionsScale: 0
@@ -150,7 +121,7 @@ Transform:
   - {fileID: 8386385923523118831}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.25, y: 0, z: 0}
 --- !u!33 &8386385924333651627
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -201,7 +172,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8386385924333651629
+--- !u!136 &6163582917057715926
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,10 +182,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.4
+  m_Height: 10
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 4.36, z: 0}
 --- !u!114 &8386385924333651625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +219,7 @@ MonoBehaviour:
   minBombAngle: 270
   leftTiltAngle: 5
   rightTiltAngle: 355
+  tiltWarningAnimation: {fileID: 0}
 --- !u!54 &8386385924333651624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -264,3 +236,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5056234957674581483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386385924333651631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f2bbf198f80c043b543562280ef443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 0}
+  animator: {fileID: 0}
+  endGameUI: {fileID: 0}
+  player: {fileID: 0}
+  camController: {fileID: 0}
+  bombTilt: {fileID: 8386385924333651626}
+  mainCameraActive: 1

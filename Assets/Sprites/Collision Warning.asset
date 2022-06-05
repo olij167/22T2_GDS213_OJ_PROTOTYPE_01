@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acdaeb3e43dbaa24bbbb392c8f1f7240, type: 3}
-  m_Name: Elderly
+  m_Script: {fileID: 11500000, guid: 858db6028f83c2d40a39a8c6c355957a, type: 3}
+  m_Name: Collision Warning
   m_EditorClassIdentifier: 
-  interestingTags:
-  - Bomb
-  - Obstacle
-  - Player
-  lookSphere: 3
-  lookRange: 5
-  maxAttentionSpanReset: 30
-  minAttentionSpanReset: 20
-  stoppingDistance: 4
-  speed: 1
+  title: Collision Warning
+  animationFrames:
+  - {fileID: 21300000, guid: 73c973f2acd1cbf42abef269681e732c, type: 3}
+  timePerFrameReset: 0.1

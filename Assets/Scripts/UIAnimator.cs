@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class UIAnimator : MonoBehaviour
 {
-    public List<Sprite> animationFrames;
-    public float timePerFrameReset;
+    public SpriteAnimation uiAnimation;
     public float timePerFrame;
     //public string animationID;
 
@@ -15,7 +14,7 @@ public class UIAnimator : MonoBehaviour
     public int count;
     void Start()
     {
-        timePerFrame = timePerFrameReset;
+        timePerFrame = uiAnimation.timePerFrameReset;
     }
 
     private void Update()
@@ -31,13 +30,13 @@ public class UIAnimator : MonoBehaviour
         {
             count++;
 
-            if (count >= animationFrames.Count)
+            if (count >= uiAnimation.animationFrames.Count)
             {
                 count = 0;
             }
 
-            uiDisplay.sprite = animationFrames[count];
-            timePerFrame = timePerFrameReset;
+            uiDisplay.sprite = uiAnimation.animationFrames[count];
+            timePerFrame = uiAnimation.timePerFrameReset;
 
         }
     }
