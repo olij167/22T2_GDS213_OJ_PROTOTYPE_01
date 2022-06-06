@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: de8c8f23334ae364c95b9d558158f9e5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Oregano
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 85364f57c89db4041b3819b8e1cb9420, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

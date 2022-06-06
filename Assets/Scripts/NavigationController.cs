@@ -13,11 +13,12 @@ public class NavigationController : MonoBehaviour
 
     public Button retryButton, menuButton, quitButton, startButton, tutorialButton;
     TextMeshProUGUI startText;
+    public TextMeshProUGUI winText;
 
-    public GameObject menuUI;
+    public GameObject menuUI, healthBar;
 
     public string gameSceneName;
-    //public bool gameStarted;
+    public bool inGame;
 
     //public TutorialUIController tutorialUIController;
 
@@ -31,6 +32,9 @@ public class NavigationController : MonoBehaviour
         //tutorialUIController.enabled = false;
 
         Time.timeScale = 0f;
+        inGame = false;
+
+        startText.text = "Start";
     }
     public void StartGame()
     {
@@ -42,22 +46,31 @@ public class NavigationController : MonoBehaviour
         //gameStarted = true;
 
         Time.timeScale = 1f;
+        inGame = true;
 
         menuUI.gameObject.SetActive(false);
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P))
+        if (inGame)
         {
-            if (!menuUI.activeSelf)
+            healthBar.SetActive(true);
+            if (Input.GetButtonDown("Cancel") || Input.GetKeyDown(KeyCode.P))
             {
-                PauseGame();
+                if (!menuUI.activeSelf)
+                {
+                    PauseGame();
+                }
+                else
+                {
+                    ResumeGame();
+                }
             }
-            else
-            {
-                ResumeGame();
-            }
+        }
+        else
+        {
+            healthBar.SetActive(false);
         }
     }
 
@@ -66,7 +79,7 @@ public class NavigationController : MonoBehaviour
         player.enabled = true;
         camController.enabled = true;
         bombTilt.enabled = true;
-        //gameStarted = false;
+        inGame = false;
 
 
         SceneManager.LoadScene(gameSceneName);
@@ -110,6 +123,22 @@ public class NavigationController : MonoBehaviour
         bombTilt.enabled = true;
         Time.timeScale = 1f;
         menuUI.gameObject.SetActive(false);
+    }
+    public void WinGame()
+    {
+        player.enabled = false;
+        camController.enabled = false;
+        bombTilt.enabled = false;
+
+        inGame = false;
+        winText.enabled = true;
+        winText.text = "YOU WIN!";
+        winText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nice One!";
+        
+
+        menuUI.SetActive(true);
+        startText.text = "Replay?";
+        startButton.onClick.AddListener(Retry);
     }
 
     public void QuitGame()
