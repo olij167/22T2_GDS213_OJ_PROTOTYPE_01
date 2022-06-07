@@ -20,6 +20,8 @@ public class NavigationController : MonoBehaviour
     public string gameSceneName;
     public bool inGame;
 
+    public UIController uiController;
+
     //public TutorialUIController tutorialUIController;
 
     private void Start()
@@ -31,10 +33,13 @@ public class NavigationController : MonoBehaviour
         MainMenu();
         //tutorialUIController.enabled = false;
 
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         inGame = false;
 
         startText.text = "Start";
+
+        
+
     }
     public void StartGame()
     {
@@ -47,6 +52,8 @@ public class NavigationController : MonoBehaviour
 
         Time.timeScale = 1f;
         inGame = true;
+
+        //uiController.UIFadeOut(menuUI.transform.GetChild(0).GetComponent<Image>(), 50f);
 
         menuUI.gameObject.SetActive(false);
     }
@@ -71,6 +78,14 @@ public class NavigationController : MonoBehaviour
         else
         {
             healthBar.SetActive(false);
+        }
+
+        if (menuUI.activeSelf)
+        {
+            //uiController.UIHover(winText, 3f);
+            //uiController.UIHover(menuUI.transform.GetChild(0).GetComponent<Image>(), 3f);
+            //uiController.UIRotate(winText.transform.GetChild(0).GetComponent<TextMeshProUGUI>(), 3f);
+            //uiController.UISizeLerp(menuUI.transform.GetChild(0).GetComponent<Image>(), 1f);
         }
     }
 
@@ -134,6 +149,10 @@ public class NavigationController : MonoBehaviour
         winText.enabled = true;
         winText.text = "YOU WIN!";
         winText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nice One!";
+
+        //uiController.UIHover(winText, 100f);
+
+        //uiController.UIHover(winText.transform.GetChild(0).GetComponent<TextMeshProUGUI>(), 125f);
         
 
         menuUI.SetActive(true);

@@ -145,8 +145,8 @@ public class BombCollisions : MonoBehaviour
             //uIAnimator.uiAnimation = bombDroppedWarning;
 
             //uIAnimator.uiDisplay.enabled = true;
-            
-            
+
+
 
         }
 

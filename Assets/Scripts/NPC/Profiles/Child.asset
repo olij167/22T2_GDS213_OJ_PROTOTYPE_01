@@ -21,4 +21,4 @@ MonoBehaviour:
   maxAttentionSpanReset: 15
   minAttentionSpanReset: 5
   stoppingDistance: 3
-  speed: 3
+  speed: 2.5
