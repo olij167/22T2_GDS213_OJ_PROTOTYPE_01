@@ -9,7 +9,7 @@ public class Detonation : MonoBehaviour
 
     float timer;
 
-    public GameObject endGameUI;
+    public GameObject endGameUI, bombBase;
 
     public PlayerController player;
     public CamController camController;
@@ -34,13 +34,23 @@ public class Detonation : MonoBehaviour
         {
             timer += Time.deltaTime;
 
+            if (timer >= 2f)
+            {
+                foreach (GameObject npc in GameObject.FindGameObjectsWithTag("NPC"))
+                {
+                    npc.GetComponent<Rigidbody>().AddExplosionForce(50f, explosion.transform.position, 1000f, 10f, ForceMode.Force);
+
+                    npc.GetComponent<Rigidbody>().AddTorque(npc.transform.position, ForceMode.Force);
+                }
+            }
+
             if (timer >= 3f)
             {
                 endGameUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.Confined;
             }
 
-            if (timer >= 8f)
+            if (timer >= 10f)
             {
                 explosion.Pause(true);
             }
@@ -59,7 +69,12 @@ public class Detonation : MonoBehaviour
         {
             explosion.transform.parent = null;
             explosion.gameObject.SetActive(true);
+            Vector3 explosionPos = new Vector3(bombBase.transform.position.x, 2f, bombBase.transform.position.x);
+
+            explosion.transform.position = explosionPos;
         }
+
+       
 
         mainCameraActive = false;
 
