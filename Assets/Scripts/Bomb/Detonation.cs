@@ -50,7 +50,7 @@ public class Detonation : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
             }
 
-            if (timer >= 10f)
+            if (timer >= 8f)
             {
                 explosion.Pause(true);
             }
@@ -69,9 +69,7 @@ public class Detonation : MonoBehaviour
         {
             explosion.transform.parent = null;
             explosion.gameObject.SetActive(true);
-            Vector3 explosionPos = new Vector3(bombBase.transform.position.x, 2f, bombBase.transform.position.x);
-
-            explosion.transform.position = explosionPos;
+            explosion.transform.position = bombBase.transform.position;
         }
 
        
