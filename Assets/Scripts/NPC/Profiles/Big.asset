@@ -16,6 +16,8 @@ MonoBehaviour:
   - Bomb
   - Obstacle
   - Player
+  - NPC
+  - WinTrigger
   lookSphere: 3
   lookRange: 5
   maxAttentionSpanReset: 20

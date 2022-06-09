@@ -22,6 +22,9 @@ public class NavigationController : MonoBehaviour
 
     public UIController uiController;
 
+    public AudioSource winAudioSource;
+    public AudioClip winAudio;
+
     //public TutorialUIController tutorialUIController;
 
     private void Start()
@@ -149,6 +152,8 @@ public class NavigationController : MonoBehaviour
         winText.enabled = true;
         winText.text = "YOU WIN!";
         winText.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Nice One!";
+
+        winAudioSource.PlayOneShot(winAudio);
 
         //uiController.UIHover(winText, 100f);
 

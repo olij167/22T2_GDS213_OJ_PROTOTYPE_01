@@ -29,6 +29,12 @@ public class BombCollisions : MonoBehaviour
 
     public Gradient healthBarGradient;
 
+    AudioSource collisionAudioSource;
+
+    public List<AudioClip> collisionAudioList;
+
+    public AudioSource musicAudioSource;
+
     private void Awake()
     {
         timerReset = dropTimer;
@@ -48,6 +54,8 @@ public class BombCollisions : MonoBehaviour
         healthBarFill.color = healthBarGradient.Evaluate(1f);
 
         healthBar = bombHealthBar.gameObject;
+
+        collisionAudioSource = GetComponent<AudioSource>();
 
     }
 
@@ -78,6 +86,7 @@ public class BombCollisions : MonoBehaviour
             uIAnimator.uiDisplay.enabled = false;
             detonation.Detonate();
             objectiveText.enabled = false;
+            musicAudioSource.enabled = false;
             //healthBar.SetActive(false);
 
             Debug.Log("Bomb Dropped! Game Over!");
@@ -104,7 +113,8 @@ public class BombCollisions : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("NPC") || collision.gameObject.CompareTag("Wall"))
+        //if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("NPC") || collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject && collision.gameObject != gameObject.CompareTag("Player"))
         {
             bombHealth.health -= collisionDamage;
 
@@ -115,6 +125,13 @@ public class BombCollisions : MonoBehaviour
             collisionWarningActive = true;
             uIAnimator.uiDisplay.enabled = true;
 
+            if (!collisionAudioSource.isPlaying)
+            {
+                collisionAudioSource.PlayOneShot(collisionAudioList[Random.Range(0, collisionAudioList.Count)]);
+            }
+
+            
+
             
             Debug.Log("Collision");
 
@@ -124,6 +141,8 @@ public class BombCollisions : MonoBehaviour
                 navigationController.inGame = false;
                 // Explosion - Game Over
                 detonation.Detonate();
+                musicAudioSource.enabled = false;
+
                 objectiveText.enabled = false;
                 //healthBar.SetActive(false);
                 Debug.Log("Too many collisions! Game Over!");

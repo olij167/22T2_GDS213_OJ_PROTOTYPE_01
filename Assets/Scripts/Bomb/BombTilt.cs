@@ -12,9 +12,12 @@ public class BombTilt : MonoBehaviour
     public UIAnimator tiltWarningAnimation;
     public SpriteAnimation tiltAnimation;
 
+    public AudioSource tiltWarningSource;
+
     private void Start()
     {
         tiltWarningAnimation.uiDisplay.enabled = false;
+        tiltWarningSource.enabled = false;
 
     }
     void Update()
@@ -30,6 +33,7 @@ public class BombTilt : MonoBehaviour
             transform.Rotate(0, 0, Vector3.back.z * tiltSpeed * Time.deltaTime);
 
             tiltWarningAnimation.uiDisplay.enabled = true;
+            tiltWarningSource.enabled = true;
             tiltWarningAnimation.uiAnimation = tiltAnimation;
             tiltWarningAnimation.uiDisplay.transform.rotation = new Quaternion(uiArrowRightAngle, 0f, 0f, tiltWarningAnimation.uiDisplay.transform.rotation.w);
             //tiltWarningAnimation.timePerFrameReset = Mathf.Lerp(0f, 0.5f, tiltSpeed);
@@ -42,6 +46,7 @@ public class BombTilt : MonoBehaviour
             transform.Rotate(0, 0, Vector3.forward.z * tiltSpeed * Time.deltaTime);
 
             tiltWarningAnimation.uiDisplay.enabled = true;
+            tiltWarningSource.enabled = true;
             tiltWarningAnimation.uiAnimation = tiltAnimation;
             tiltWarningAnimation.uiDisplay.transform.rotation = new Quaternion(uiArrowLeftAngle, 180f, 0f, tiltWarningAnimation.uiDisplay.transform.rotation.w);
         }
@@ -53,6 +58,7 @@ public class BombTilt : MonoBehaviour
         {
             tiltSpeed = 0f;
             tiltWarningAnimation.uiDisplay.enabled = false;
+            tiltWarningSource.enabled = false;
         }
     }
 
@@ -75,6 +81,7 @@ public class BombTilt : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = true;
             GetComponent<Rigidbody>().isKinematic = false;
             transform.parent = null;
+            tiltWarningSource.enabled = false;
         }
     }
 }
