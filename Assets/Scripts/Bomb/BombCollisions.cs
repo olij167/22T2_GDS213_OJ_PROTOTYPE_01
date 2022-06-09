@@ -104,7 +104,7 @@ public class BombCollisions : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("NPC"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("NPC") || collision.gameObject.CompareTag("Wall"))
         {
             bombHealth.health -= collisionDamage;
 

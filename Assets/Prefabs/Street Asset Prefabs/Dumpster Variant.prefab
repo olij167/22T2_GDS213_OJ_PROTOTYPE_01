@@ -62,10 +62,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 42743caf2b5088f448303371bf91494d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f85a1487b7fb3a458237c1f9044b787, type: 2}
     - target: {fileID: 919132149155446097, guid: 42743caf2b5088f448303371bf91494d,
         type: 3}
       propertyPath: m_Name
-      value: model
+      value: Dumpster Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42743caf2b5088f448303371bf91494d, type: 3}
+--- !u!1 &862318272994601755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 42743caf2b5088f448303371bf91494d,
+    type: 3}
+  m_PrefabInstance: {fileID: 519875723946022474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &-654240627774922614
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862318272994601755}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1.465228, z: 1.260446}
+  m_Center: {x: 0, y: 0.025186002, z: 0}

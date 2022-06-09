@@ -53,11 +53,11 @@ public class PlayerController : MonoBehaviour
 
         
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            moveSpeed = sprintSpeed;
-        }
-        else moveSpeed = baseSpeed;
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    moveSpeed = sprintSpeed;
+        //}
+        //else moveSpeed = baseSpeed;
 
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravScale * Time.deltaTime);

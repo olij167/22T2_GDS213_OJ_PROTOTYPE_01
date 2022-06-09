@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Waypoint
   - WinTrigger
+  - Wall
   layers:
   - Default
   - TransparentFX
