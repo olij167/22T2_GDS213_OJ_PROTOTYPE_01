@@ -21,6 +21,7 @@ public class NavigationController : MonoBehaviour
     public bool inGame;
 
     public UIController uiController;
+    public TutorialController tutorialController;
 
     public AudioSource winAudioSource;
     public AudioClip winAudio;
@@ -36,12 +37,12 @@ public class NavigationController : MonoBehaviour
         MainMenu();
         //tutorialUIController.enabled = false;
 
-        Time.timeScale = 1f;
+        Time.timeScale = 0f;
         inGame = false;
 
         startText.text = "Start";
 
-        
+        tutorialController.gameObject.SetActive(false);
 
     }
     public void StartGame()
@@ -58,6 +59,7 @@ public class NavigationController : MonoBehaviour
 
         //uiController.UIFadeOut(menuUI.transform.GetChild(0).GetComponent<Image>(), 50f);
 
+        tutorialController.gameObject.SetActive(false);
         menuUI.gameObject.SetActive(false);
     }
 
@@ -134,12 +136,19 @@ public class NavigationController : MonoBehaviour
         startButton.onClick.AddListener(ResumeGame);
     }
 
+    public void Tutorial()
+    {
+        tutorialController.gameObject.SetActive(true);
+        tutorialController.StartTutorial();
+    }
+
     public void ResumeGame()
     {
         player.enabled = true;
         camController.enabled = true;
         bombTilt.enabled = true;
         Time.timeScale = 1f;
+        tutorialController.gameObject.SetActive(false);
         menuUI.gameObject.SetActive(false);
     }
     public void WinGame()
